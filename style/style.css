@@ -1,171 +1,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
-/*VARIABLES*/
-:root{
-    /*COLORESSS*/
+/* VARIABLES */
+:root {
     --color-primario: #000;
     --color-secundario: #f6f6f6;
     --color-terciario: #22d4fd;
     --color-hover: #272727;
 
-
-    /*FUENTES*/
     --fuente-montserrat: "Montserrat", sans-serif;
     --fuente-krona: "Krona One", sans-serif;
-
-
 }
 
 
-
-/*-------------------------------*/
-*{
+*,
+*::before,
+*::after {
+    margin: 0;
     padding: 0;
-    margin:0;
+    box-sizing: border-box;
 }
 
-
-body{
-    /* height: 100vh; */
-    box-sizing: border-box;
+body {
     background-color: var(--color-primario);
     color: var(--color-secundario);
-
+    font-family: var(--fuente-montserrat);
 }
 
 /* ENCABEZADO */
-
-.header{
-
+.header {
     padding: 2% 0% 0% 15%;
-    
-
 }
-.header__menu{
+
+.header__menu {
     display: flex;
     gap: 80px;
-    
 }
-.header__menu__link{
-    font-family: var(--fuente-montserrat);
+
+.header__menu__link {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--color-terciario);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/*============================*/
-
-
-
-.titulo-destacar{
-    color:var(--color-terciario);
+.header__menu__link:hover {
+    color: var(--color-secundario);
 }
 
-.presentacion{
+/* PRESENTACIÓN */
+.presentacion {
     display: flex;
     align-items: center;
-    padding: 3.5% 15%;
     justify-content: space-between;
     gap: 82px;
+    padding: 3.5% 15%;
 }
 
-.presentation__content{
+.presentation__content {
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 40px; 
-
+    gap: 40px;
 }
 
-.presentation__content__tittle{
+.presentation__content__tittle {
     font-family: var(--fuente-krona);
-    font-size: 2.2rem;
-    
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
 }
 
-.presentation__content__text{
-    font-size: 1.5rem;
-    font-family: var(--fuente-montserrat);
-    }
+.titulo-destacar {
+    color: var(--color-terciario);
+}
 
-.presentation--bottom{
+.presentation__content__text {
+    font-size: 1.5rem;
+}
+
+/* BOTONES */
+.presentation--bottom {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     align-items: center;
     gap: 32px;
 }
 
-.presentation__subtitittle{
+.presentation__subtitittle {
     font-family: var(--fuente-krona);
     font-size: 1.5rem;
     font-weight: 400;
 }
 
-.buttom__principal{
+.buttom__principal {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 16px;
     border: 2px solid var(--color-terciario);
-    width: 50%;
+    width: 100%;
+    max-width: 300px;
     text-align: center;
     border-radius: 8px;
     font-size: 1.5rem;
     font-weight: 600;
-    padding: 21.5px 0;
+    padding: 16px;
     text-decoration: none;
     color: var(--color-secundario);
     font-family: var(--fuente-montserrat);
+    transition: background-color 0.3s ease;
 }
 
-.buttom__principal:hover{
+.buttom__principal:hover {
     background-color: var(--color-hover);
-
 }
 
-/* .header__menu__link:hover{
-    background-color: #272727;
-    border-radius: 5px solid #fff;
-} */
-
-
-.presentacion__imagen{
-    width: 50%;
+/* IMAGEN PRESENTACIÓN */
+.presentacion__imagen {
+    width: 100%;
+    max-width: 400px;
 }
 
-.footer{
-    color: var(--color-primario);
+/* FOOTER */
+.footer {
     background-color: var(--color-terciario);
+    color: var(--color-primario);
     padding: 24px;
-    color: #000;    
     text-align: center;
-    font-family: var(--fuente-montserrat);
     font-size: 1.5rem;
     font-weight: 400;
-
 }
 
-@media (max-width: 1200px){
-
-    .header{
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .header {
         padding: 10%;
     }
 
-    .header__menu{
+    .header__menu {
         justify-content: center;
     }
-    
-    .presentacion{
+
+    .presentacion {
         flex-direction: column-reverse;
         padding: 5%;
     }
 
-    .presentation__content{
-        width: auto;
-        
+    .presentation__content {
+        width: 100%;
     }
-
 }
